@@ -1,0 +1,6 @@
+{
+    "type"  : "directory",
+    "name"  : "articles",
+    "title" : "Your site title",
+    "items" : []
+}

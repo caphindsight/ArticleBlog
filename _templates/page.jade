@@ -1,0 +1,29 @@
+extends layout.jade
+
+block defs
+    include /_util/current_path.jade
+    include /_util/bootstrap.jade
+    include /_util/jquery.jade
+
+    - var navbar_tab = detect_navbar_tab();
+    - var breadcrumbs = detect_breadcrumbs();
+    - var url = detect_url();
+    - var node = detect_node();
+    - var data = node._data;
+
+block prepend head
+    title= data.title
+
+    +import_jquery
+    +import_bootstrap
+    +html_meta
+    +import_stylesheet("/styles/global.css")
+
+block body
+    +page_container
+        +breadcrumbs
+            each breadcrumb in breadcrumbs
+                +breadcrumb(breadcrumb.url, breadcrumb.data.title, breadcrumb.is_active)
+            block breadcrumbs_optional_panel
+
+        block content

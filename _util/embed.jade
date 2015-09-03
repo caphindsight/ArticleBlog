@@ -1,0 +1,6 @@
+mixin import_embed_scripts
+    +import_script("/scripts/iframe_adjust_height.js")
+
+mixin embed_article(html_url)
+    iframe.adjust-height(src=html_url, scrolling="no", height="auto", width="100%", frameborder="no")
+

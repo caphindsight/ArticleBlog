@@ -1,0 +1,12 @@
+extends page.jade
+
+block content
+    .row
+        each item in data.items
+            .col-sm-6.col-md-4: .thumbnail.index-elem(onclick="javascript:location.href='"+(url+item)+"';")
+                img(src=(node[item]._data.logo_url || ("/img/logo_" + node[item]._data.type + ".png")))
+                .caption
+                    h3(align="center")= node[item]._data.title
+                    if node[item]._data.description != null
+                        p(align="justify")= node[item]._data.description
+

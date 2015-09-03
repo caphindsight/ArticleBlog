@@ -1,0 +1,30 @@
+include import.jade
+
+mixin import_bootstrap
+    +import_stylesheet("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+    +import_stylesheet("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
+
+    +import_script("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
+
+mixin html_meta
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+
+mixin page_container
+    .container
+        block
+
+mixin breadcrumbs
+    ol.breadcrumb
+        block
+
+mixin breadcrumb(url, text, active)
+    if active
+        li.active= text
+    else
+        li: a(href=url)= text
+
+mixin icon(name)
+    span(class="glyphicon glyphicon-" + name)
+

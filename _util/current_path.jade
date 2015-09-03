@@ -1,0 +1,35 @@
+- function detect_navbar_tab() {
+-   if (current.path.length == 0) return 'root';
+-   else if (current.path[0] == "articles") return 'articles';
+-   else if (current.path[0] == "about") return 'about';
+-   else return 'unknown';
+- }
+
+- function detect_breadcrumbs() {
+-   var node = public, url = "/", n = current.path.length - 1;
+-   var res = [];
+-   for (var i = 0; i < n; i++) {
+-     var piece = current.path[i];
+-     node = node[piece]; url += piece + "/";
+-     res.push({ 'url' : url, 'data' : node._data, 'is_active' : (i == n - 1) });
+-   }
+-   return res;
+- }
+
+- function detect_node() {
+-   var node = public, n = current.path.length - 1;
+-   for (var i = 0; i < n; i++) {
+-     var piece = current.path[i];
+-     node = node[piece];
+-   }
+-   return node;
+- }
+
+- function detect_url() {
+-   var url = "/", n = current.path.length - 1;
+-   for (var i = 0; i < n; i++) {
+-     var piece = current.path[i];
+-     url += piece + "/";
+-   }
+-   return url;
+- }
