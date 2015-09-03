@@ -1,5 +1,3 @@
-// Global css used in documents converted from LyX
-
 body {
 	font: 90% sans-serif;
 	background: #f9f9f9;
@@ -9,10 +7,12 @@ body {
 }
 
 #globalWrapper {
-	/*margin: 10px 5%;
-	padding: 20px;*/
-	background: #ffffff;
-	line-height: 1.5em;
+    background: linear-gradient(#ddd, transparent 1px), linear-gradient(90deg, #ddd, transparent 1px);
+    background-size: 10px 10px;
+    background-position: center center;
+    border: 1px solid #ddd;
+    line-height: 1.5em;
+    padding: 20px;
 }
 
 /* Basic styles */
@@ -20,18 +20,23 @@ a {
 	text-decoration: none;
 	background: none;
 }
+
 a:link {
 	color: #0030c0;
 }
+
 a:visited {
 	color: #603090;
 }
+
 a:active {
 	color: #ffa000;
 }
+
 a:hover {
 	text-decoration: underline;
 }
+
 h1 {
 	margin-top: 0em;
 	line-height: 1.5em;
@@ -40,10 +45,15 @@ h1 {
 h1.Part, h1.Part- {
 	text-align: center;
     font-size: 3em;
+    border-bottom: 2px solid;
+    border-top:    2px solid;
 }
 
 h1.Section, h1.Section- {
     font-size: 2em;
+    text-align: center;
+    border-bottom: 1px dashed;
+    margin-top: 100px;
 }
 
 sup {
@@ -452,6 +462,16 @@ div.frameless {
 }
 div.Frameless {
 }
+
+div.Boxed, div.Framed, div.Frameless, div.Shadowbox, div.Shaded, div.Ovalbox, div.ovalbox {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 div.Boxed {
 	outline-width: thin;
 	outline-style: solid;
