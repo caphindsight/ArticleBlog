@@ -3,7 +3,7 @@ $( function () {
         var $e = $(e);
         
         function resize() {
-            var h = $e.contents().find("body").height();
+            var h = $e.contents().find("body").height() + 50;
             if ($e.height() != h) {
                 $e.height(h);
             }
